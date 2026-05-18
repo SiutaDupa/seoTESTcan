@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZZR Auto-Instalacje | Zabezpieczenia SEO CAN i Elektronika</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-lighter: #151515;
+            --text-light: #f4f4f4;
+            --text-muted: #a0a0a0;
+            --gold: #d4af37;
+            --gold-hover: #eed371;
+            --border-color: #333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; position: relative; }
+        
+        /* Tło ze złotymi, estetycznymi wzorami geometrycznymi */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(10, 10, 10, 0.96), rgba(10, 10, 10, 0.98)),
+                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNkNGFmMzciIGZpbGwtb3BhY2l0eT0iMC4wNyI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwaDIwdjIwSDIWMjB6TTAgMjBoMjB2MjBIMFYyMHoyMCAwaDIwdjIwSDIwVjB6Ii8+PC9nPjwvZz48L3N2Zz4=');
+            z-index: -1;
+        }
+
+        a { text-decoration: none; color: var(--gold); transition: color 0.3s; }
+        a:hover { color: var(--gold-hover); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+        
+        header { background-color: rgba(5, 5, 5, 0.98); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-size: 26px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; }
+        .logo span { color: var(--gold); }
+        .nav-right { display: flex; align-items: center; gap: 30px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text-light); font-weight: 500; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--gold); }
+        .phone-nav { font-size: 18px; font-weight: bold; color: var(--gold); background: #1a1a1a; padding: 10px 18px; border-radius: 4px; border: 1px solid #222; }
+        
+        .hero { margin-top: 80px; min-height: 70vh; display: flex; align-items: center; text-align: center; }
+        .hero-content { max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 56px; margin-bottom: 25px; font-weight: 800; line-height: 1.1; color: var(--gold); }
+        .hero h1 span { color: var(--text-light); }
+        .hero p { font-size: 20px; color: var(--text-muted); margin-bottom: 45px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn { display: inline-block; background-color: var(--gold); color: var(--bg-dark); padding: 16px 38px; border-radius: 4px; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: background 0.3s, transform 0.2s; }
+        .btn:hover { background-color: var(--gold-hover); transform: translateY(-2px); }
+        
+        .about-bg { background-color: var(--bg-lighter); }
+        .section-title { text-align: center; font-size: 40px; margin-bottom: 60px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: flex-start; }
+        .text-box h3 { font-size: 26px; margin-bottom: 18px; color: var(--text-light); }
+        .text-box p { margin-bottom: 22px; color: var(--text-muted); text-align: justify; }
+        .text-box ul { list-style: none; margin-left: 0; margin-bottom: 20px; }
+        .text-box ul li { position: relative; padding-left: 25px; margin-bottom: 10px; color: var(--text-muted); }
+        .text-box ul li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: bold; }
+        
+        .offer-section { background-color: var(--bg-dark); }
+        .offer-box { max-width: 1000px; margin: 0 auto; border: 2px solid var(--gold); border-radius: 8px; padding: 50px; background: linear-gradient(145deg, #111 0%, #1a1a1a 100%); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.08); }
+        .offer-header { text-align: center; margin-bottom: 35px; border-bottom: 1px solid var(--border-color); padding-bottom: 25px; }
+        .offer-header h3 { font-size: 32px; color: var(--text-light); margin-bottom: 12px; }
+        .offer-header .price { font-size: 36px; font-weight: bold; color: var(--gold); }
+        .offer-list { list-style: none; margin-bottom: 45px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px; }
+        .offer-list li { position: relative; padding-left: 30px; font-size: 16px; color: var(--text-light); }
+        .offer-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: bold; font-size: 18px; }
+        
+        .offer-technical { display: flex; gap: 40px; align-items: center; border-top: 1px solid var(--border-color); padding-top: 45px; }
+        .tech-img { max-width: 320px; height: auto; border-radius: 4px; border: 1px solid var(--border-color); }
+        .tech-description { flex: 1; }
+        .tech-description h3 { font-size: 24px; color: var(--gold); margin-bottom: 18px; }
+        .tech-description p { color: var(--text-muted); font-size: 15px; margin-bottom: 18px; text-align: justify; }
+        .tech-details { list-style: none; font-size: 14px; color: var(--text-light); display: flex; flex-wrap: wrap; gap: 10px 20px;}
+        .tech-details li strong { color: var(--text-light); }
+        
+        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
+        .feature-card { background-color: var(--bg-lighter); padding: 45px 30px; border: 1px solid var(--border-color); border-radius: 8px; transition: border-color 0.3s, background 0.3s; text-align: center; }
+        .feature-card:hover { border-color: var(--gold); background: #1a1a1a; }
+        .feature-card h4 { font-size: 22px; margin-bottom: 18px; color: var(--gold); text-transform: uppercase; }
+        .feature-card p { color: var(--text-muted); font-size: 15px; text-align: justify; }
+        
+        .contact-section { background-color: var(--bg-lighter); }
+        .contact-container { max-width: 700px; margin: 0 auto; background-color: var(--bg-dark); padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid var(--border-color); }
+        .contact-info { text-align: center; margin-bottom: 40px; padding-bottom: 25px; border-bottom: 1px solid var(--border-color); }
+        .contact-info p { color: var(--text-muted); margin-bottom: 10px; font-size: 20px; }
+        .contact-info a.phone-link { color: var(--gold); font-weight: bold; font-size: 30px; display: block; margin-top: 15px; letter-spacing: 1px; }
+        .contact-info a.phone-link:hover { color: var(--gold-hover); }
+
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; color: var(--text-muted); font-size: 14px; }
+        
+        .form-group input, .form-group textarea { 
+            width: 100%; 
+            padding: 14px 18px; 
+            background-color: var(--bg-lighter); 
+            border: 1px solid var(--border-color); 
+            color: var(--text-light); 
+            border-radius: 4px; 
+            font-size: 16px; 
+            transition: border-color 0.3s; 
+        }
+        .form-group textarea { resize: vertical; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+
+        .form-message { display: none; padding: 18px; margin-bottom: 25px; border-radius: 4px; text-align: center; font-weight: bold; font-size: 15px;}
+        .form-message.success { display: block; background-color: rgba(40, 167, 69, 0.15); color: #28a745; border: 1px solid #28a745; }
+        .form-message.error { display: block; background-color: rgba(220, 53, 69, 0.15); color: #dc3545; border: 1px solid #dc3545; }
+        
+        footer { background-color: #050505; padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border-color); }
+        
+        @media (max-width: 992px) {
+            .offer-list { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 44px; }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .features-grid, .offer-technical, .form-row { grid-template-columns: 1fr; flex-direction: column; text-align: center; gap: 30px;}
+            .tech-img { margin: 0 auto; }
+            .nav-links, .nav-right .phone-nav { display: none; }
+            .nav-right { width: 100%; justify-content: flex-end; }
+            .hero h1 { font-size: 34px; }
+            section { padding: 70px 0; }
+            .offer-box, .contact-container { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">ZZR<span> Auto-Instalacje</span></a>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="#oferta">Oferta</a>
+                    <a href="#jak-to-dziala">Jak to działa</a>
+                    <a href="#pakiet-seo">Zabezpieczenia SEO</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
+                <div class="phone-nav">
+                    <a href="tel:48883842209">📞 +48 883 842 209</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Skuteczne zabezpieczenie auta <span>w całej Polsce</span></h1>
+            <p>Nie pozwól, aby Twoje auto zniknęło w 30 sekund. Oferuję profesjonalny, mobilny montaż cyfrowych blokad CAN bezpośrednio u klienta. Dojeżdżam na terenie całego kraju.</p>
+            <a href="#kontakt" class="btn">Sprawdź wycenę dla swojego auta</a>
+        </div>
+    </section>
+
+    <section id="oferta" class="about-bg">
+        <div class="container">
+            <h2 class="section-title">Kompleksowa Oferta</h2>
+            <div class="grid-2">
+                <div class="text-box">
+                    <h3>Zabezpieczenia Antykradzieżowe</h3>
+                    <p>Specjalizuję się w ochronie pojazdów przed najnowszymi metodami kradzieży. Instaluję systemy, które skutecznie unieruchamiają pojazd, chroniąc Twoje mienie.</p>
+                    <ul>
+                        <li><strong>Blokady SEO CANblu:</strong> Cyfrowe immobilizery w pełni integrujące się z elektroniką nowoczesnych aut.</li>
+                        <li><strong>Zabezpieczenia analogowe:</strong> Indywidualnie projektowane odcięcia zapłonu dla aut starszych i klasyków (bez szyny CAN).</li>
+                        <li><strong>Lokalizatory GPS:</strong> Systemy monitoringu pojazdów.</li>
+                    </ul>
+                </div>
+                <div class="text-box">
+                    <h3>Elektronika i Doposażenie</h3>
+                    <p>Podnoszę komfort, bezpieczeństwo i funkcjonalność pojazdów poprzez profesjonalny montaż dodatkowej elektroniki użytkowej i specjalistycznej.</p>
+                    <ul>
+                        <li><strong>Multimedia:</strong> Stacje multimedialne z Android Auto oraz Apple CarPlay.</li>
+                        <li><strong>Obraz:</strong> Kamery cofania i wideorejestratory.</li>
+                        <li><strong>Oświetlenie:</strong> Robocze LED, listwy dalekosiężne (lightbary) oraz oświetlenie zewnętrzne.</li>
+                        <li><strong>Pojazdy specjalne:</strong> Lampy ostrzegawcze (koguty), belki dachowe i sygnały dźwiękowe.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jak-to-dziala">
+        <div class="container">
+            <h2 class="section-title">Jak działa cyfrowa blokada CAN?</h2>
+            <div class="grid-2" style="align-items: center;">
+                <div class="text-box">
+                    <h3>Niewidzialna Tarcza</h3>
+                    <p>Zamiast fizycznie przecinać kable (co łatwo obejść lub zdiagnozować w warsztacie), system łączy się z magistralą CAN – "układem nerwowym" samochodu.</p>
+                    <p>Urządzenie nieustannie "nasłuchuje" komunikatów w aucie. Jeśli złodziej otworzy drzwi i spróbuje odpalić silnik lub wrzucić bieg bez wcześniejszej autoryzacji (np. wpisania kodu przyciskami), moduł natychmiast wysyła cyfrową komendę blokującą bezpośrednio do sterownika silnika (ECU) lub skrzyni biegów.</p>
+                </div>
+                <div class="text-box">
+                    <h3>Zalety technologii cyfrowej:</h3>
+                    <ul>
+                        <li><strong>Wysoka kultura montażu:</strong> Instalacja jest wykonywana zgodnie ze sztuką. Przewody są starannie łączone oraz izolowane.</li>
+                        <li><strong>Niewykrywalność:</strong> System jest "przezroczysty" dla komputerów diagnostycznych w ASO. Złodziej nie znajdzie go za pomocą skanera podpiętego pod złącze OBD.</li>
+                        <li><strong>Niezawodność:</strong> Cyfrowe komendy są realizowane w ułamku sekundy, natychmiast uniemożliwiając odjazd.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pakiet-seo" class="offer-section">
+        <div class="container">
+            <h2 class="section-title">Koniec kradzieży „na walizkę”</h2>
+            
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; font-size: 18px;">
+                Złodzieje używają dziś sprzętu, który przedłuża lub emuluje sygnał Twojego kluczyka (metoda na walizkę / Gameboya). Fabryczne alarmy są bezradne – auto otwiera się i odpala tak, jakbyś to Ty do niego wsiadał. <strong>Rozwiązaniem jest niezależny system autoryzacji.</strong>
+            </p>
+
+            <div class="offer-box">
+                <div class="offer-header">
+                    <h3>Pakiet SEO CANBlu</h3>
+                    <div class="price">OD 1599 ZŁ BRUTTO</div>
+                </div>
+                <ul class="offer-list">
+                    <li>Oryginalny immobilizer SEO CANBlu</li>
+                    <li>Dwa breloki ID w zestawie</li>
+                    <li>Gwarancja całkowicie ukrytego montażu</li>
+                    <li>Skuteczna elektroniczna blokada odjazdu</li>
+                    <li>Autoryzacja brelokiem, kodem z przycisków w aucie lub aplikacją mobilną</li>
+                    <li>Funkcja trybu serwisowego (przydatna podczas wizyt w warsztacie)</li>
+                    <li>Instalacja z dojazdem na terenie całej Polski</li>
+                    <li>Gwarancja na 2 lata</li>
+                </ul>
+
+                <div class="offer-technical">
+                    <img src="image_1.jpg" alt="SEO CANblu technical components" class="tech-img">
+                    
+                    <div class="tech-description">
+                        <h3>Sercem systemu jest SEO CANblu</h3>
+                        <p>Ten cyfrowy moduł to mikroprocesorowy mózg systemu, podłączany bezpośrednio do szyny CAN pojazdu. Dzięki temu jest całkowicie niewidoczny dla diagnostyki fabrycznej i nie wymaga przecinania wiązek przewodów samochodu.</p>
+                        
+                        <ul class="tech-details">
+                            <li><strong>Pobór prądu:</strong> Ultra-niski, kluczowy dla nowoczesnych aut. W trybie czuwania pobiera poniżej 5 mA. Nie rozładowuje akumulatora.</li>
+                            <li><strong>Interfejs i obsługa:</strong> Pełna elastyczność. Możesz autoryzować odjazd na 3 sposoby: wpisując kod PIN fabrycznymi przyciskami na kierownicy/kokpicie, nosząc przy sobie miniaturowy brelok ID (w zestawie), lub poprzez szyfrowaną aplikację w smartfonie.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="o-mnie" class="about-bg">
+        <div class="container">
+            <h2 class="section-title">Dlaczego warto mi zaufać?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Autoryzacja SEO</h4>
+                    <p>Posiadam bezpośrednią umowę z producentem cenionych zabezpieczeń – firmą SEO. Wykonuję w pełni autoryzowane instalacje blokad CAN, dbając o najwyższe standardy techniczne i gwarancję prawidłowego działania systemu.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Tysiące opomiarowanych pojazdów</h4>
+                    <p>Moje doświadczenie to nie tylko teoria. Z własnej ręki opomiarowałem już kilka tysięcy pojazdów. Pracowałem przy nowoczesnych autach osobowych, skomplikowanych instalacjach w ciężarówkach, a nawet przy pojazdach szynowych.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Indywidualne podejście</h4>
+                    <p>Twoje auto nie posiada magistrali CAN? Żaden problem. Do każdego pojazdu, w tym także przy klasycznej motoryzacji, podchodzę całkowicie indywidualnie, projektując i instalując równie skuteczne, alternatywne systemy analogowe.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Mobilność i wygoda</h4>
+                    <p>Szanuję Twój czas. Nie musisz zostawiać auta w warsztacie i martwić się o dojazdy. Świadczę w pełni mobilne usługi, dojeżdżając pod wskazany adres (dom, firma) na terenie całej Polski.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Umów montaż pod swoim domem</h2>
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <p>Masz pytania? Zadzwoń bezpośrednio:</p>
+                    <a href="tel:48883842209" class="phone-link">+48 883 842 209</a>
+                </div>
+
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px; font-size: 14px;">
+                    Każde zlecenie wyceniam indywidualnie. Wypełnij formularz, a skontaktuję się z Tobą, aby podać dokładny koszt instalacji dla Twojego pojazdu.
+                </p>
+
+                <div id="formMessage" class="form-message"></div>
+
+                <form id="wycenaForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko</label>
+                            <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adres E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="jan@domena.pl">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Numer telefonu</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="123 456 789" pattern="[0-9\s\-\+]{9,15}">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carmodel">Marka, model i zakres usługi</label>
+                            <input type="text" id="carmodel" name="carmodel" required placeholder="np. BMW X5 - CANBlu i Kamera">
+                        </div>
+                        <div class="form-group">
+                            <label for="caryear">Rok produkcji pojazdu</label>
+                            <input type="number" id="caryear" name="caryear" required min="1960" max="2027" placeholder="np. 2023">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Dodatkowy komentarz / uwagi (opcjonalnie)</label>
+                        <textarea id="comment" name="comment" rows="4" placeholder="Wpisz tutaj dodatkowe informacje..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="submitBtn" style="width: 100%; margin-top: 10px;">Wyślij zapytanie o wycenę</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ZZR Auto-Instalacje. Wszelkie prawa zastrzeżone. | Autoryzowany instalator zabezpieczeń CAN.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- KONFIGURACJA EMAILJS ---
+        (function(){
+            emailjs.init("iWn2wtgjlkt2oCXrv"); 
+        })();
+
+        document.getElementById('wycenaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const messageBox = document.getElementById('formMessage');
+            const carYear = document.getElementById('caryear').value;
+            const currentYear = new Date().getFullYear();
+
+            if(carYear < 1960 || carYear > currentYear + 1) {
+                messageBox.textContent = "Proszę podać poprawny rok produkcji pojazdu.";
+                messageBox.className = "form-message error";
+                return;
+            }
+
+            submitBtn.textContent = "Wysyłanie...";
+            submitBtn.disabled = true;
+
+            emailjs.sendForm('service_x8cyuj6', 'template_uzgy1wn', this)
+                .then(function() {
+                    messageBox.textContent = "Dziękuję! Twoje zapytanie zostało wysłane. Skontaktuję się z Tobą wkrótce w celu przedstawienia wyceny.";
+                    messageBox.className = "form-message success";
+                    document.getElementById('wycenaForm').reset();
+                }, function(error) {
+                    messageBox.textContent = "Przepraszamy, wystąpił błąd podczas wysyłania wiadomości. Proszę zadzwonić bezpośrednio pod numer +48 883 842 209.";
+                    messageBox.className = "form-message error";
+                    console.error('Błąd EmailJS:', error);
+                })
+                .then(function() {
+                    submitBtn.textContent = "Wyślij zapytanie o wycenę";
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
